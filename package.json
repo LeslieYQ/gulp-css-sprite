@@ -1,5 +1,5 @@
 {
-  "name": "gulp-css-sprite",
+  "name": "css-sprite-gulp",
   "version": "0.0.1",
   "description": "sprite image from css and replace with this css",
   "authors": [
