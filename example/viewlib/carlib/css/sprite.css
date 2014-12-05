@@ -1,0 +1,32 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors yuqiu (yuqiu_xa@netposa.com)
+ * @date    2014-11-26 18:37:35
+ * @version $Id$
+ */
+
+
+.np-icon-people{
+	background-image: url(../images/sprite/ac.png);
+	width: 16px;
+  	height: 16px;
+}
+
+.np-icon-people:hover{
+	background-image: url(../images/sprite/ac.png);
+	width: 16px;
+  	height: 16px;
+}
+
+.np-icon-thing{
+	background-image: url(../images/sprite/c.png);
+	width: 12px;
+  	height: 12px;
+}
+
+.np-icon-thing:hover{
+	background-image: url(../images/sprite/c_hover.png);
+	width: 12px;
+  	height: 12px;
+}

@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors yuqiu (yuqiu_xa@netposa.com)
+ * @date    2014-11-26 18:37:35
+ * @version $Id$
+ */
+
+
+
+.np-icon-abor{
+	background-image: url(../images/sprite/abor.png);
+	width: 16px;
+  	height: 16px;
+}
+
+.np-icon-abor:hover{
+	background-image: url(../images/sprite/abor_hover.png);
+	width: 16px;
+  	height: 16px;
+}

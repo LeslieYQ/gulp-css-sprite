@@ -5,12 +5,12 @@
   "authors": [
     "yuqiu <yuqiu-1988@163.com>"
   ],
-  "main": "index.js",
+  "main": "./lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bornkiller/through-gulp.git"
+    "url": "https://github.com/LeslieYQ/gulp-css-sprite.git"
   },
-  "homepage": "https://github.com/teambition/then.js",
+  "homepage": "https://github.com/LeslieYQ/gulp-css-sprite",
   "keywords": [
     "gulp",
     "css",
@@ -21,16 +21,31 @@
     "css",
     "sprite"
   ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "test",
+    "examples",
+    "Gulpfile.js"
+  ],
   "dependencies": {},
   "devDependencies": {
     "gulp": "~3.8.10",
     "spritesmith": "latest",
     "through2": "latest",
-    "gulp-util": "latest"
+    "gulp-util": "latest",
+    "underscore": "latest",
+    "url2": "latest",
+    "json2css": "latest"
   },
   "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/LeslieYQ/gulp-css-sprite/issues"
+  },
   "engines": {
     "node": ">=0.10.0"
-  }
+  },
+  "_id": "gulp-css-sprite@0.0.1",
+  "_from": "gulp-css-sprite@"
 }
 
