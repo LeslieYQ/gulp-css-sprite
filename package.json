@@ -1,13 +1,26 @@
 {
   "name": "gulp-css-sprite",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "sprite image from css and replace with this css",
+  "authors": [
+    "yuqiu <yuqiu-1988@163.com>"
+  ],
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/bornkiller/through-gulp.git"
   },
-  "readme": "# through-gulp\n![Build Status](https://img.shields.io/travis/bornkiller/through-gulp/master.svg?style=flat)\n![Coverage Report](http://img.shields.io/coveralls/bornkiller/through-gulp.svg?style=flat)\n![Package Dependency](https://david-dm.org/bornkiller/through-gulp.svg?style=flat)\n![Package DevDependency](https://david-dm.org/bornkiller/through-gulp/dev-status.svg?style=flat)\n\nA tiny wrapper around Node streams. To make gulp plugin write easier.\nInspired by through2, (https://github.com/rvagg/through2/), but much simplify\nfor gulp-plugin only.\n\n## Install\n```js\nnpm install through-gulp --save\n```\n\n## API\nOne main API provided to use.\n```javascript\nvar through = require('through-gulp');\nvar stream = through(transformFunction, flushFunction);\n```\nBoth argument has default value to pipe data next without processing.\nif just for files map or files filter, two shortcut method provided as well.\n\n```javascript\n// './test/fixtures/template.js'\ndefine({});\n// './test/fixtures/destiny.js'\ndefine(function(){});\n```\n\n```javascript\ngulp.src(['./test/fixtures/template.js','./test/fixtures/destiny.js'])\n    .pipe(through.map(function(file) {\n        file.contents = Buffer.concat([new Buffer('love '), file.contents]);\n        return file;\n    }))\n    .pipe(assert.first(function(file) {\n        (file.contents.toString()).should.equal('love define({});');\n    }))\n    .on('end', done);\n```\n\n```javascript\ngulp.src(['./test/fixtures/template.js','./test/fixtures/destiny.js'])\n    .pipe(through.filter(function(file) {\n        return file.contents.toString().indexOf('function') !== -1;\n    }))\n    .pipe(assert.first(function(file) {\n        (file.contents.toString()).should.equal('define(function(){});');\n    }))\n    .on('end', done);\n```\n\n## Usage\nA simple demonstrate to write a gulp-plugin with through-gulp.\nIf you know nothing about gulp plugin, check this\n(https://github.com/gulpjs/gulp/blob/master/docs/writing-a-plugin/guidelines.md)\n\n\n```javascript\n// PLUGIN_NAME: sample\nvar through = require('through-gulp');\n\nfunction sample() {\n  // creating a stream through which each file will pass\n  var stream = through(function(file, encoding,callback) {\n  \t  // do whatever necessary to process the file \n      if (file.isNull()) {\n\n      }\n      if (file.isBuffer()) {\n\n      }\n      if (file.isStream()) {\n\n      }\n      // just pipe data next, or just do nothing to process file later in flushFunction\n      // never forget callback to indicate that the file has been processed.\n      this.push(file);\n      callback();\n    },function(callback) {\n      // just pipe data next, just callback to indicate that the stream's over\n      this.push(something);\n      callback();\n    });\n\n  // returning the file stream\n  return stream;\n};\n\n// exporting the plugin \nmodule.exports = sample;\n```\n\nthen use the plugin with gulp\n```javascript\nvar gulp = require('gulp');\nvar sample = require('sample');\ngulp.task('sample', function() {\n\treturn gulp.src(['source file'])\n\t    .pipe(sample())\n\t    .pipe(gulp.dest('file destiny'))\n});\n```\n## Contact\n*Email: hjj491229492@hotmail.com*.\n",
+  "homepage": "https://github.com/teambition/then.js",
+  "keywords": [
+    "gulp",
+    "css",
+    "sprite"
+  ],
+  "tags": [
+    "gulp",
+    "css",
+    "sprite"
+  ],
   "dependencies": {},
   "devDependencies": {
     "gulp": "~3.8.10",
@@ -15,6 +28,7 @@
     "through2": "latest",
     "gulp-util": "latest"
   },
+  "readmeFilename": "README.md",
   "engines": {
     "node": ">=0.10.0"
   }
